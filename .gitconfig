@@ -1,0 +1,43 @@
+[alias]
+  tree = log --graph --decorate --pretty=oneline --abbrev-commit
+
+[core]
+  editor = nvim
+  pager = delta
+  precomposeunicode = true
+  excludesFile = /Users/$(whoami)/.gitignore_global
+
+[delta]
+  features = side-by-side line-numbers decorations
+  syntax-theme = Dracula
+
+[delta "decorations"]
+  commit-decoration-style = bold magenta box ul
+  file-style = bold yellow ul
+  file-decoration-style = none
+  hunk-header-decoration-style = cyan box ul
+
+[delta "line-numbers"]
+  line-numbers-left-style = cyan
+  line-numbers-right-style = cyan
+  line-number-minus-style = 124
+  line-number-plus-style = 28
+
+[interactive]
+  diffFilter = delta --color-only
+
+[init]
+	defaultBranch = main
+
+[user]
+  name = Darren
+  email = me@darrenholland.com
+
+[fetch]
+  prune = true
+
+[column]
+  ui = auto
+
+[branch]
+  sort = -commiterdate
