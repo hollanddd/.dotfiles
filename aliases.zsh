@@ -7,6 +7,7 @@ alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias compile="commit 'compile'"
 alias version="commit 'version'"
 alias zource="source ~/.zshrc"
+alias upgrade="~/.dotfiles/upgrade.sh"
 
 # Directories
 alias dotfiles="cd $DOTFILES"
