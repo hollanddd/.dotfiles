@@ -1,15 +1,40 @@
+# Functions
+# fail prints failure messages to stdout and returns preserving the exit code
+# https://stackoverflow.com/questions/75249026/how-do-i-assert-something-in-bash-print-a-useful-error-message-and-then-still
+function fail() {
+  printf '%s\n' "$1" >&2
+  return "${2:-1}"
+}
+# jwt_decode decodes a JWT token and outputs the payload in JSON format.
+function jwt_decode() {
+  jq -R 'split(".") | .[1] | @base64d | fromjson' <<< "$1"
+}
+
+# trim_quotes() removes quotes from a a string
+function trim_quotes() {
+  echo "$1" | sed 's/^"\(.*\)"$/\1/'
+}
+
 # Shortcuts
 alias copyssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
 alias zource="omz reload"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
-alias ll="/opt/homebrew/opt/coreutils/libexec/gnubin/ls -AhlFo --color --group-directories-first"
-alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
+alias ll="eza -l"
+alias shrug="echo '¯\_(ツ)_/¯' | pbcopy && pbpaste"
 alias upgrade="~/.dotfiles/upgrade.sh"
+
+# Web tooling
+alias decode-jwt-"jwt_decode"
 
 # Directories
 alias dotfiles="cd $DOTFILES"
 alias library="cd $HOME/Library"
 alias projects="cd $HOME/Documents"
+alias claude="/Users/dev/.claude/local/claude"
+
+# String manipulation
+alias trim-newline="tr -d  '\n'"
+alias trim-quotes="trim_quotes"
 
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
@@ -25,7 +50,11 @@ alias gd="git diff"
 alias gdc="git diff --cached"
 alias gco="git checkout"
 alias gl="git log --oneline --decorate --color"
+alias glog="git log -1 --pretty=%B | trim-newline"
 
 # Vim
 alias vim="nvim"
 alias vi="nvim"
+
+# Embeded
+alias export-esp=". $HOME/export-esp.sh"
