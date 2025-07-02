@@ -7,7 +7,9 @@ brew 'awscli'
 brew 'bash' # Latest Bash version
 brew 'bat' # Used for spatie/visit
 brew 'coreutils' # Those that come with macOS are outdated
+brew 'eza' # A modern replacement for `ls`
 brew 'ffmpeg'
+brew 'fzf' # Fuzzy finder
 brew 'gh'
 brew 'git'
 brew 'git-delta'
@@ -22,7 +24,6 @@ brew 'ripgrep'
 brew 'stripe/stripe-cli/stripe'
 brew 'svn' # Needed to install fonts
 brew 'tmux'
-brew 'eza' # A modern replacement for `ls`
 
 # Development
 brew 'imagemagick'

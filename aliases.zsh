@@ -1,10 +1,23 @@
 # Functions
+function git_pull() {
+  remote="${1:-origin}"
+  git pull $remote $(git rev-parse --abbrev-ref HEAD)
+}
+alias gull=git_pull
+
+function git_push() {
+  remote="${1:-origin}"
+  git push $remote $(git rev-parse --abbrev-ref HEAD)
+}
+alias gush=git_push
+
 # fail prints failure messages to stdout and returns preserving the exit code
 # https://stackoverflow.com/questions/75249026/how-do-i-assert-something-in-bash-print-a-useful-error-message-and-then-still
 function fail() {
   printf '%s\n' "$1" >&2
   return "${2:-1}"
 }
+
 # jwt_decode decodes a JWT token and outputs the payload in JSON format.
 function jwt_decode() {
   jq -R 'split(".") | .[1] | @base64d | fromjson' <<< "$1"
@@ -65,12 +78,14 @@ alias gc="git commit"
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias gco="git checkout"
+alias gap="git add --patch"
 alias gl="git log --oneline --decorate --color"
 alias glog="git log -1 --pretty=%B | trim-newline"
 
 # Vim
 alias vim="nvim"
 alias vi="nvim"
+alias v="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
 
 # Embeded
 alias export-esp=". $HOME/export-esp.sh"
