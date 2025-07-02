@@ -22,6 +22,7 @@ brew 'ripgrep'
 brew 'stripe/stripe-cli/stripe'
 brew 'svn' # Needed to install fonts
 brew 'tmux'
+brew 'eza' # A modern replacement for `ls`
 
 # Development
 brew 'imagemagick'
@@ -29,11 +30,9 @@ brew 'imagemagick'
 # Apps
 cask 'caffeine'
 cask 'discord'
-cask 'docker'
 cask 'figma'
 cask 'firefox'
 cask 'github'
-cask 'google-chrome'
 cask 'httpie'
 cask 'imageoptim'
 cask 'loom'
@@ -41,7 +40,6 @@ cask 'pastebot'
 cask 'slack'
 cask 'tunnelbear'
 cask 'tuple'
-cask 'zoom'
 
 # Quicklook
 cask 'qlmarkdown'
