@@ -34,6 +34,10 @@ fi
 rm -rf $HOME/.config/tmux/tmux.conf
 ln -sw $HOME/.dotfiles/tmux.conf $HOME/.config/tmux/tmux.conf
 
+# remove existing finicky config file and symlink the .finicky.js file from the .dotfiles
+rm -rf $HOME/.finicky.js
+ln -sw $HOME/.dotfiles/finicky.js $HOME/.finicky.js
+
 # Update Homebrew recipes
 brew update
 
