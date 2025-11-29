@@ -44,13 +44,23 @@ function spinner()
     printf "    \b\b\b\b"
 }
 
+# lolcat is a function that pipes the arguments of a command to lolcat
+# lolcat is a rainbow text generator clone of cat
+function lat() {
+  lolcat "$@"
+}
+
+alias pq="pqrs"
+
 # Shortcuts
 alias copyssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
 alias zource="omz reload"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
-alias ll="eza -l"
+alias ll="eza --icons -l"
+alias ls="eza --icons --group-directories-first --color=always $1"
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy && pbpaste"
 alias upgrade="~/.dotfiles/upgrade.sh"
+alias claude="$HOME/.claude/local/claude"
 
 # Web tooling
 alias decode-jwt-"jwt_decode"
@@ -59,7 +69,6 @@ alias decode-jwt-"jwt_decode"
 alias dotfiles="cd $DOTFILES"
 alias library="cd $HOME/Library"
 alias projects="cd $HOME/Documents"
-alias claude="/Users/dev/.claude/local/claude"
 
 # String manipulation
 alias trim-newline="tr -d  '\n'"
@@ -75,6 +84,7 @@ alias docker-composer="docker-compose"
 # Git
 alias gb="git branch"
 alias gc="git commit"
+alias gz="git cz"
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias gco="git checkout"

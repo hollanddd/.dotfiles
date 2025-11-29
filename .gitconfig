@@ -6,6 +6,7 @@
   pager = delta
   precomposeunicode = true
   excludesFile = /Users/$(whoami)/.gitignore_global
+	hooksPath = .git/hooks
 
 [delta]
   features = side-by-side line-numbers decorations

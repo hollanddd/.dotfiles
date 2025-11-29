@@ -138,6 +138,7 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 # Rust
 source $HOME/.cargo/env
+export CARGO_HOME="$HOME/.cargo"
 
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
@@ -146,3 +147,9 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# proto
+export PROTO_HOME="$HOME/.proto";
+export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH";
+
+eval "$(starship init zsh)"

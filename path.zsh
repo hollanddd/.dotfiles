@@ -11,6 +11,18 @@ add_to_path "$DOTFILES/bin"
 # Load global Node installed binaries
 add_to_path "$HOME/.node/bin"
 
+#Load local binaries
+add_to_path "$HOME/.local/bin"
+
 # Use project specific binaries before global ones
 add_to_path "vendor/bin"
 add_to_path "node_modules/.bin"
+
+# asdf
+add_to_path "$HOME/.asdf/shims"
+
+#pg
+add_to_path "/opt/homebrew/opt/postgresql@17/bin"
+
+#moon
+add_to_path "$HOME/.moon/bin"
