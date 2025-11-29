@@ -112,6 +112,7 @@ if [[ $(uname -m) == 'arm64' ]]; then
 elif [[ $(uname) == 'Linux' ]]; then
   [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" # This loads nvm
   [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" 
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 else
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
@@ -154,5 +155,7 @@ esac
 # proto
 export PROTO_HOME="$HOME/.proto";
 export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH";
+
+. ~/.dotfiles/aliases.zsh
 
 eval "$(starship init zsh)"

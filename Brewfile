@@ -8,6 +8,7 @@ brew 'bash' # Latest Bash version
 brew 'bat' # Used for spatie/visit
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'eza' # A modern replacement for `ls`
+brew 'fd'
 brew 'fzf' # Fuzzy finder
 brew 'gh'
 brew 'git'

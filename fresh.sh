@@ -21,7 +21,7 @@ fi
 brew update
     
 # Install all our dependencies with bundle (See Brewfile)
-brew bundle --file ./Brewfile
+brew bundle --file ~/$HOME/.dotfiles/Brewfile
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
@@ -52,5 +52,3 @@ if [ "$name" = "Darwin" ]; then
   # Set macOS preferences - we will run this last because this will reload the shell
   . ./.macos
 fi
-
-. ~/.zshrc
