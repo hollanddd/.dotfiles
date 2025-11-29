@@ -8,7 +8,6 @@ brew 'bash' # Latest Bash version
 brew 'bat' # Used for spatie/visit
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'eza' # A modern replacement for `ls`
-brew 'ffmpeg'
 brew 'fzf' # Fuzzy finder
 brew 'gh'
 brew 'git'
@@ -17,41 +16,22 @@ brew 'grep'
 brew 'luarocks' # lua package manager
 brew 'httpie'
 brew 'jq' 
-brew 'mas' # Mac App Store manager
 brew 'neovim'
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
 brew 'ripgrep'
-brew 'stripe/stripe-cli/stripe'
 brew 'svn' # Needed to install fonts
 brew 'tmux'
 
 # Development
-brew 'imagemagick'
-
-# Apps
-cask 'caffeine'
-cask 'discord'
-cask 'figma'
-cask 'firefox'
-cask 'finicky'
-cask 'github'
-cask 'httpie'
-cask 'imageoptim'
-cask 'loom'
-cask 'pastebot'
-cask 'slack'
-cask 'tunnelbear'
-cask 'tuple'
+# brew 'imagemagick'
 
 # Quicklook
-cask 'qlmarkdown'
-cask 'quicklook-json'
-
+# cask 'qlmarkdown'
+# cask 'quicklook-json'
+#
 # Fonts
-cask 'font-lato'
-cask 'font-open-sans'
-cask 'font-roboto'
-cask 'font-source-code-pro-for-powerline'
-cask 'font-source-code-pro'
-
-# Mac App Store
+# cask 'font-lato'
+# cask 'font-open-sans'
+# cask 'font-roboto'
+# cask 'font-source-code-pro-for-powerline'
+# cask 'font-source-code-pro'

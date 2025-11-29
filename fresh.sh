@@ -1,30 +1,39 @@
 #!/bin/sh
 
-echo "Setting up your Mac..."
+name=$(uname)
+
+echo "Setting up your $name machine..."
 
 # Check for Oh My Zsh and install if we don't have it
-if test ! $(which omz); then
+if ! command -v omz >/dev/null 2>&1; then
   /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
 fi
 
 # Check for Homebrew and install if we don't have it
-if test ! $(which brew); then
+if ! command -v brew >/dev/null 2>&1; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# Update Homebrew recipes
+brew update
+    
+# Install all our dependencies with bundle (See Brewfile)
+brew bundle --file ./Brewfile
+
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
-ln -sw $HOME/.dotfiles/.zshrc $HOME/.zshrc
+ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
 # configure git configs
-rm $HOME/.gitconfig
-ln -sw $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
+rm -rf $HOME/.gitconfig
+ln -s $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
 
-rm $HOME/.gitignore
-ln -sw $HOME/.dotfiles/.gitignore_global $HOME/.gitignore_global
+rm -rf $HOME/.gitignore
+rm -rf $HOME/.gitignore_global
+ln -s $HOME/.dotfiles/.gitignore_global $HOME/.gitignore_global
 
 # Check for tmux config directory and create if it doesn't exist
 if [ ! -d $HOME/.config/tmux ]; then
@@ -32,17 +41,16 @@ if [ ! -d $HOME/.config/tmux ]; then
 fi
 # remove existing tmux config file and symlink the .tmux.conf file from the .dotfiles
 rm -rf $HOME/.config/tmux/tmux.conf
-ln -sw $HOME/.dotfiles/tmux.conf $HOME/.config/tmux/tmux.conf
+ln -s $HOME/.dotfiles/tmux.conf $HOME/.config/tmux/tmux.conf
 
 # remove existing finicky config file and symlink the .finicky.js file from the .dotfiles
 rm -rf $HOME/.finicky.js
-ln -sw $HOME/.dotfiles/finicky.js $HOME/.finicky.js
+ln -s $HOME/.dotfiles/finicky.js $HOME/.finicky.js
 
-# Update Homebrew recipes
-brew update
 
-# Install all our dependencies with bundle (See Brewfile)
-brew bundle --file ./Brewfile
+if [ "$name" = "Darwin" ]; then
+  # Set macOS preferences - we will run this last because this will reload the shell
+  . ./.macos
+fi
 
-# Set macOS preferences - we will run this last because this will reload the shell
-source ./.macos
+. ~/.zshrc
