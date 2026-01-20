@@ -26,3 +26,5 @@ add_to_path "/opt/homebrew/opt/postgresql@17/bin"
 
 #moon
 add_to_path "$HOME/.moon/bin"
+
+add_to_path "$HOME/.local/bin"

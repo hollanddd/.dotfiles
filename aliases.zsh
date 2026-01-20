@@ -60,7 +60,7 @@ alias ll="eza --icons -l"
 alias ls="eza --icons --group-directories-first --color=always $1"
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy && pbpaste"
 alias upgrade="~/.dotfiles/upgrade.sh"
-alias claude="$HOME/.claude/local/claude"
+alias claude="$HOME/.local/bin/claude"
 
 # Web tooling
 alias decode-jwt-"jwt_decode"
