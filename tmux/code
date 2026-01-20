@@ -1,0 +1,13 @@
+#!/bin/bash
+
+SESSION="CODE"
+EXISTS=$(tmux list-sessions | rg $SESSION)
+
+if [$EXISTS = ""]
+then
+  tmux new-session -d -s $SESSION -n 'CODE' -c ~
+  tmux send-keys -t $SESSION:0 'v' C-m
+  tmux attach -t $SESSION:0
+fi
+
+tmux attach -t $SESSION
