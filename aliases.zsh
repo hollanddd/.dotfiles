@@ -81,6 +81,7 @@ function spinner()
 function lat() {
   lolcat "$@"
 }
+alias cat=bat
 
 alias pq="pqrs"
 
