@@ -7,6 +7,7 @@ brew 'coreutils' # Those that come with macOS are outdated
 brew 'eza' # A modern replacement for `ls`
 brew 'fd'
 brew 'fzf' # Fuzzy finder
+brew 'gcc'
 brew 'gh'
 brew 'git'
 brew 'git-delta'
