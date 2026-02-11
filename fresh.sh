@@ -9,6 +9,7 @@ if ! command -v omz >/dev/null 2>&1; then
   /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
 fi
 
+# Check for Rust and install if we don't have it
 if ! command -v rustc >/dev/null 2>&1; then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 fi
@@ -53,6 +54,7 @@ fi
 rm -rf $HOME/.config/tmux/tmux.conf
 ln -s $HOME/.dotfiles/tmux.conf $HOME/.config/tmux/tmux.conf
 
+# remove existing nvim configs and symlik the nvim file from the .dotfiles
 rm -rf $HOME/.config/nvim
 ln -s $HOME/.dotfiles/nvim $HOME/.config/nvim
 
@@ -64,3 +66,8 @@ if [ "$name" = "Darwin" ]; then
   # Set macOS preferences - we will run this last because this will reload the shell
   . ./.macos
 fi
+
+echo "Setup complete!"
+echo "You may need to run :Lazy inside neovim to finish setting up plugins."
+echo "You may need to run :Mason inside neovim to finish setting up LSP servers."
+echo "You may need to run :Copilot setup inside neovim to finish setting up GitHub Copilot."
