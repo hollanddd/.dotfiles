@@ -5,7 +5,7 @@
   editor = nvim
   pager = delta
   precomposeunicode = true
-	excludesfile = /home/dev/.gitignore_global
+	excludesfile = $HOME/.gitignore_global
 	hooksPath = .git/hooks
 
 [delta]
