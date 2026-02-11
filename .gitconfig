@@ -5,7 +5,7 @@
   editor = nvim
   pager = delta
   precomposeunicode = true
-  excludesFile = /Users/$(whoami)/.gitignore_global
+	excludesfile = /home/dev/.gitignore_global
 	hooksPath = .git/hooks
 
 [delta]
@@ -29,10 +29,6 @@
 
 [init]
 	defaultBranch = main
-
-[user]
-  name = Darren
-  email = me@darrenholland.com
 
 [fetch]
   prune = true

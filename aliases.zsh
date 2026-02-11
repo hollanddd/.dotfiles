@@ -1,5 +1,12 @@
 alias hack-the-gibson="~/.dotfiles/tmux/code"
 
+# Source a file with exported variables.
+function sauce() {
+  set -a;
+  source $1;
+  set +a;
+}
+
 # Functions
 function git_pull() {
   remote="${1:-origin}"

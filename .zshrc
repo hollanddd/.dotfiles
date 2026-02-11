@@ -158,7 +158,4 @@ export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH";
 
 . ~/.dotfiles/aliases.zsh
 
-# Source private aliases
-. ~/.dotfiles/aliases.priv
-
 eval "$(starship init zsh)"
