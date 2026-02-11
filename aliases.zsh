@@ -8,17 +8,40 @@ function sauce() {
 }
 
 # Functions
+# git_pull pulls the current branch from the specified remote (default: origin)
 function git_pull() {
   remote="${1:-origin}"
   git pull $remote $(git rev-parse --abbrev-ref HEAD)
 }
 alias gull=git_pull
 
+# git_push pushes the current branch to the specified remote (default: origin)
 function git_push() {
   remote="${1:-origin}"
   git push $remote $(git rev-parse --abbrev-ref HEAD)
 }
 alias gush=git_push
+
+# gcush commits with a message and pushes to the specified remote (default: origin)
+function git_commit_push() {
+  git commit -m "$1" && gush
+}
+alias gcush=git_commit_push
+
+# create an pr in github with gh
+function create_mr_gh() {
+  gh pr create --base main --title "$(git log -1 --pretty=%s)"
+}
+
+# create a merge request in gitlab with glab
+function create_mr_glab() {
+  glab mr create --target-branch main --title "$(git log -1 --pretty=%s)"
+}
+
+# we set the default to github. if you want to use gitlab overwrite this
+# in your ~/.zshrc.local with alias mr="create_mr_glab"
+# mr is a shortcut for create_mr. pr is already taken by another cli tool
+alias mr="create_mr_gh"
 
 # fail prints failure messages to stdout and returns preserving the exit code
 # https://stackoverflow.com/questions/75249026/how-do-i-assert-something-in-bash-print-a-useful-error-message-and-then-still
