@@ -77,6 +77,10 @@ if [ "$name" = "Darwin" ]; then
   . ./.macos
 fi
 
+# Set up nvm and install latest LTS version of node
+nvm install --lts
+nvm default --lts
+
 echo "Setup complete!"
 echo "You may need to run :Lazy inside neovim to finish setting up plugins."
 echo "You may need to run :Mason inside neovim to finish setting up LSP servers."
