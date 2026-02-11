@@ -32,6 +32,11 @@ if ! command -v starship >/dev/null 2>&1; then
   curl -fsSL https://starship.rs/install.sh | sh -s -- -y
 fi
 
+# Check if pnpm is installed and install if we don't have it
+if ! command -v pnpm >/dev/null 2>&1; then
+  curl -fsSL https://get.pnpm.io/install.sh | sh -
+fi
+
 # Update Homebrew recipes
 brew update
     
@@ -71,9 +76,6 @@ if [ "$name" = "Darwin" ]; then
   # Set macOS preferences - we will run this last because this will reload the shell
   . ./.macos
 fi
-
-# source zshrc to pick up new changes
-source $HOME/.zshrc
 
 echo "Setup complete!"
 echo "You may need to run :Lazy inside neovim to finish setting up plugins."
