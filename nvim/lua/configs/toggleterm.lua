@@ -6,8 +6,8 @@ require("toggleterm").setup {
     highlights = {
       border = "Normal",
       background = "Normal",
-    }
-  }
+    },
+  },
 }
 
 local function float_mappings(mapping)
@@ -21,4 +21,4 @@ local function float_mappings(mapping)
   })
 end
 
-float_mappings([[<C-\>]])
+float_mappings [[<C-\>]]

@@ -21,10 +21,10 @@ vim.lsp.config.lua_ls = {
   settings = {
     Lua = {
       diagnostics = {
-        globals = { "vim" }
-      }
-    }
-  }
+        globals = { "vim" },
+      },
+    },
+  },
 }
 
 vim.lsp.enable(vim.list_extend(servers, { "lua_ls" }))
