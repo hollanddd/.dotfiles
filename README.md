@@ -1,14 +1,14 @@
 ## Introduction
 
-This repository serves as my way to help me setup and maintain my Mac. It takes the effort out of installing everything manually. Everything needed to install my preferred setup of macOS is detailed in this readme. Feel free to explore, learn and copy parts for your own dotfiles. Enjoy!
+This repository serves as my way to help me setup and maintain ephemeral development servers. It takes the effort out of installing everything manually. Everything needed to install my preferred setup of developer tools is detailed in this readme. Feel free to explore, learn and copy parts for your own dotfiles. Enjoy!
 
-## A Fresh macOS Setup
+## A Fresh Setup
 
-These instructions are for setting up new Mac devices. Instead, if you want to get started building your own dotfiles, you can [find those instructions below](#your-own-dotfiles).
+These instructions are for setting up new machines. Instead, if you want to get started building your own dotfiles, you can [find those instructions below](#your-own-dotfiles).
 
-### Setting up your Mac
+### Setting up your machine
 
-1. Update macOS to the latest version through system preferences
+1. Update the operating system to the latest version
 2. Setup an SSH key by using one of the two following methods  
    2.1. If you use 1Password, install it with the 1Password [SSH agent](https://developer.1password.com/docs/ssh/get-started/#step-3-turn-on-the-1password-ssh-agent) and sync your SSH keys locally.  
    2.2. Otherwise [generate a new public and private SSH key](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) by running:
