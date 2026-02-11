@@ -27,6 +27,11 @@ if ! command -v brew >/dev/null 2>&1; then
   fi
 fi
 
+# Check for starship and install if we don't have it
+if ! command -v starship >/dev/null 2>&1; then
+  curl -fsSL https://starship.rs/install.sh | sh -s -- -y
+fi
+
 # Update Homebrew recipes
 brew update
     
