@@ -11,7 +11,7 @@ fi
 
 # Check for Rust and install if we don't have it
 if ! command -v rustc >/dev/null 2>&1; then
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 fi
 
 # Check for Homebrew and install if we don't have it
