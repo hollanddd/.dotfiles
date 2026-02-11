@@ -72,6 +72,9 @@ if [ "$name" = "Darwin" ]; then
   . ./.macos
 fi
 
+# source zshrc to pick up new changes
+source $HOME/.zshrc
+
 echo "Setup complete!"
 echo "You may need to run :Lazy inside neovim to finish setting up plugins."
 echo "You may need to run :Mason inside neovim to finish setting up LSP servers."
