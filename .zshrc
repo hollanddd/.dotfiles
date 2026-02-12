@@ -1,7 +1,13 @@
 # Path to your dotfiles.
 export DOTFILES=$HOME/.dotfiles
 export SYSTEM_USER="$(whoami)"
-export WORKSPACE_NAME="$(hostname -s)"
+export SYSTEM_TYPE="$(uname -s)"
+
+if [[ $SYSTEM_TYPE == "Linux" ]]; then
+  export WORKSPACE_NAME="$(hostnamectl hostname)"
+else
+  export WORKSPACE_NAME="$(hostname -s)"
+fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
