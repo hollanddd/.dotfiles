@@ -1,13 +1,20 @@
-local getos = require("./utils/get-os")
-local user = os.getenv("SYSTEM_USER")
-local workspace_name = os.getenv("WORKSPACE_NAME")
+local getos = require "./utils/get-os"
+local user = os.getenv "SYSTEM_USER"
+local workspace_name = os.getenv "WORKSPACE_NAME"
+local vault_directory = "~/vaults/"
+
+if not workspace_name then
+  workspace_name = "content"
+end
 
 -- check what environemnt we are and get vault root directory path
-local vault_directory = getos.is_wsl() and "/mnt/c/Users/" .. user .. "/Documents/" or "~/vaults/"
+if getos.is_wsl() then
+  vault_directory = "/mnt/c/Users/" .. user .. "/Documents/"
+end
 
 return {
   "epwalsh/obsidian.nvim",
-  version = "*",  -- recommended, use latest release instead of latest commit
+  version = "*", -- recommended, use latest release instead of latest commit
   lazy = true,
   ft = "markdown",
   -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
@@ -28,7 +35,7 @@ return {
     workspaces = {
       {
         name = "work",
-        path = vault_directory .. workspace_name
+        path = vault_directory .. workspace_name,
       },
     },
     -- see below for full list of options 👇
