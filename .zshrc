@@ -166,9 +166,10 @@ export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH";
 
 . ~/.dotfiles/aliases.zsh
 
+eval "$(starship init zsh)"
+
 # Source local profile if it exists
 [ -f ~/.zshrc.local ] && . ~/.zshrc.local
 [ -f ~/.zprofile ] && . ~/.zprofile
 
 
-eval "$(starship init zsh)"
