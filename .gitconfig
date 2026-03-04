@@ -38,4 +38,4 @@
   ui = auto
 
 [branch]
-  sort = -commiterdate
+  sort = -committerdate
