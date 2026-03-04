@@ -27,6 +27,7 @@ function git_commit_push() {
   git commit -m "$1" && gush
 }
 alias gcush=git_commit_push
+alias gst="git st"
 
 # create an pr in github with gh
 function create_mr_gh() {
