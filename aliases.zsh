@@ -110,7 +110,6 @@ alias trim-quotes="trim_quotes"
 
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
-alias watch="npm run dev"
 
 # Docker
 alias docker-composer="docker-compose"
