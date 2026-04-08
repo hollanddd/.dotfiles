@@ -34,8 +34,8 @@ return {
   opts = {
     workspaces = {
       {
-        name = "work",
-        path = vault_directory .. workspace_name,
+        name = "kb",
+        path = vault_directory .. "kb",
       },
     },
     -- see below for full list of options 👇

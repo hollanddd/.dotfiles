@@ -9,6 +9,8 @@ else
   export WORKSPACE_NAME="$(hostname -s)"
 fi
 
+export VAULT_DIRECTORY="$HOME/vaults"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 

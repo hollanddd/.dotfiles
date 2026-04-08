@@ -16,6 +16,7 @@ add_to_path "$HOME/.local/bin"
 
 # Use project specific binaries before global ones
 add_to_path "vendor/bin"
+
 add_to_path "node_modules/.bin"
 
 # asdf

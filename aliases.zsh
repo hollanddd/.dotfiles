@@ -90,11 +90,10 @@ alias pq="pqrs"
 alias copyssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
 alias zource="omz reload"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
-alias ll="eza --icons -l --no-user --no-time --color=always $1"
+alias ll="eza --icons -l --group-directories-first --no-user --no-time --color=always $1"
 alias ls="eza --icons --group-directories-first --color=always $1"
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy && pbpaste"
 alias upgrade="~/.dotfiles/upgrade.sh"
-alias claude="$HOME/.local/bin/claude"
 
 # Web tooling
 alias decode-jwt-"jwt_decode"
