@@ -44,12 +44,17 @@ brew update
 brew bundle --file $HOME/.dotfiles/Brewfile
 
 # Install LaTeX packages required by md2pdf
-if command -v tlmgr >/dev/null 2>&1; then
+if [ "$name" = "Darwin" ]; then
+  if command -v tlmgr >/dev/null 2>&1; then
+    echo "Installing LaTeX packages for md2pdf..."
+    sudo tlmgr update --self
+    sudo tlmgr install collection-fontsrecommended booktabs inconsolata
+  else
+    echo "Warning: tlmgr not found — skipping LaTeX package install (is basictex installed?)"
+  fi
+elif [ "$name" = "Linux" ]; then
   echo "Installing LaTeX packages for md2pdf..."
-  sudo tlmgr update --self
-  sudo tlmgr install collection-fontsrecommended booktabs inconsolata
-else
-  echo "Warning: tlmgr not found — skipping LaTeX package install (is basictex installed?)"
+  sudo dnf install -y texlive-scheme-medium
 fi
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
