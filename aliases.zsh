@@ -131,3 +131,6 @@ alias v="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvi
 
 # Embeded
 alias export-esp=". $HOME/export-esp.sh"
+
+# Documents
+alias md2pdf="~/.dotfiles/md2pdf.sh"

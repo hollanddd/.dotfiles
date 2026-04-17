@@ -18,6 +18,7 @@ brew 'httpie'
 brew 'jq' 
 brew 'make'
 brew 'neovim'
+brew 'pandoc'
 brew 'nvm'
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
 brew 'ripgrep'
@@ -25,6 +26,7 @@ brew 'tmux'
 
 # Development
 # brew 'imagemagick'
+cask 'basictex' # LaTeX engine for pandoc PDF rendering (run: sudo tlmgr install collection-fontsrecommended booktabs inconsolata)
 
 # Quicklook
 # cask 'qlmarkdown'
