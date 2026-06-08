@@ -56,7 +56,10 @@ LATEX
 
 # Run pandoc with formatting options
 # --resource-path allows pandoc to find images relative to input file and home directory
-pandoc "$INPUT" \
+MERMAID_FILTER_MERMAID_CONFIG="$HOME/.dotfiles/.mermaid-config.json" \
+    MERMAID_FILTER_WIDTH=1600 MERMAID_FILTER_SCALE=2 \
+    pandoc "$INPUT" \
+    --filter mermaid-filter \
     -o "$OUTPUT" \
     -V geometry:margin=0.85in \
     -V fontsize=10pt \
@@ -70,3 +73,9 @@ pandoc "$INPUT" \
 rm -f "$HEADER_FILE"
 
 echo "Created: $OUTPUT"
+
+if grep -qEi "microsoft|wsl" /proc/version 2>/dev/null; then
+    DEST="/mnt/c/Users/$SYSTEM_USER/Documents/"
+    cp "$OUTPUT" "$DEST"
+    echo "Copied to $DEST"
+fi
