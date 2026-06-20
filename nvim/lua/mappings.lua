@@ -16,3 +16,9 @@ map("i", "<C-l>", function()
 end, { desc = "Copilot accept" })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+
+vim.cmd("cnoreabbrev Q q")
+vim.cmd("cnoreabbrev W w")
+vim.cmd("cnoreabbrev WQ wq")
+vim.cmd("cnoreabbrev Wq wq")
+vim.cmd("cnoreabbrev Q! q!")
